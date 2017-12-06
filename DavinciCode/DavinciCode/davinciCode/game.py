@@ -31,5 +31,8 @@ def prepareCards(preparedCardList,myCardList,hisOrHerCardList):
         currentCard.setBelong('hisOrHer')
         hisOrHerCardList.append(currentCard)
         i+=1
-    myCardList.sort(key=lambda x: x.regards)
-    hisOrHerCardList.sort(key=lambda x: x.regards)
+    sortCard(myCardList)
+    sortCard(hisOrHerCardList)
+    
+def sortCard(listToSort):
+    listToSort.sort(key=lambda x: (x.regards,x.color,x.number))
